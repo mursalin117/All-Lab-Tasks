@@ -1,6 +1,7 @@
 // This code contains the code for finding the value of an
 // arithmetic expression in postfix using stack
 // only for one digit
+// It is also postfix evaluation
 
 #include <iostream>
 #include <bits/stdc++.h>
