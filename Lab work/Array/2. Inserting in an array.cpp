@@ -82,18 +82,16 @@ void insertInSortedIntegerArray(int a[], int length, int d){
         }
     }
     // inserting the extra element
-    for(int i = 0; i <= length; i++){
+    for(int i = 0; i < length; i++){
         if(d <= a[i]){
-            cout << " d = " << d << "    a[" << i << "] = " << a[i] << endl;
             for(int j = length; j > i; j--){
-                cout << "before    a[j] = " << a[j] << "    " << "a[j-1] = " << a[j-1] << endl;
                 a[j] = a[j-1];
-                cout << "after    a[j] = " << a[j] << "    " << "a[j-1] = " << a[j-1] << endl;
             }
             a[i] = d;
-            break;
+            return;
         }
     }
+    a[length] = d;
 }
 
 void insertPositionInSortedIntegerArray(int a[], int length, int d, int pos){
@@ -109,11 +107,9 @@ void insertInSortedStringArray(string a[], int length, string str){
     for(int i = 0; i < length-1; i++){
         for(int j = i+1; j < length; j++){
             if(a[i] > a[j]){
-                //cout << "before    a[i] = " << a[i] << "    " << "a[j] = " << a[j] << endl;
                 tem = a[i];
                 a[i] = a[j];
                 a[j] = tem;
-                //cout << "after    a[i] = " << a[i] << "    " << "a[j] = " << a[j] << endl;
             }
         }
     }
@@ -121,14 +117,15 @@ void insertInSortedStringArray(string a[], int length, string str){
    for(int i = 0; i < length; i++)
         cout << "a[" << i << "]  = " << a[i] << endl;
     // now inserting the element
-    for(int i = 0; i <= length; i++){
+    for(int i = 0; i < length; i++){
         if(str <= a[i]){
             for(int j = length; j > i; j--)
                 a[j] = a[j-1];
             a[i] = str;
-            break;
+            return;
         }
     }
+    a[length] = str;
 }
 
 void insertPositionInSortedStringArray(string a[], int length, string str, int pos){
