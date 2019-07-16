@@ -4,31 +4,36 @@ using namespace std;
 // creating a queue
 int Queue[10];
 // the staring index and the ending index initialization
-int Front = -1, Rear = 0;
+int Front = -1, Rear;
 // function for pushing the elements to queue
 int push(int item){
-    if(Rear == 10){
+    if((Rear == 10 && Front == 0 ) || (Front == Rear + 1)){
         printf("Overflow.\n");
         return 0;
     }
     else{
-        if(Front == -1) Front = 0;
+        if(Front == -1) Front = Rear = 0;
+        else if(Rear == 10) Rear = 0;
+        else Rear++;
         Queue[Rear] = item;
-        Rear++;
+        return 1;
     }
 }
 // function for showing the queue
 void show(){
     int i = Front;
-    if(i == -1)
+   // cout << "Rear = " << Rear << endl;
+    if(i == -1 || i == Rear)
         printf("Underflow.\n");
     else{
-        while(i < Rear){
+        while(i <= Rear){
             printf("%d ", Queue[i]);
             i++;
+            if(i == 10) i = 0;
         }printf("\n");
     }
 }
+
 int main(){
     // inserting the elements to queue
     int x, len;
