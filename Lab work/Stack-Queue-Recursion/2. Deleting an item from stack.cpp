@@ -15,6 +15,7 @@ int push(int item){
         if(top == -1) top = 0;
         Stack[top] = item;
         top++;
+        return 1;
     }
 }
 // function for deleting or popping from stack
