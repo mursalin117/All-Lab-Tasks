@@ -14,6 +14,7 @@ int push(int item){
     else{
         Stack[top] = item;
         top++;
+        return 1;
     }
 }
 // showing the elements of stack
