@@ -18,13 +18,16 @@ int push(int item){
     }
 }
 // function for deleting or popping from stack
-void pop(){
-    if(top < 0)
+int pop(){
+    if(top < 0){
         printf("Underflow\n");
+        return -999999;
+    }
     else{
         int data = Stack[top-1];
         //cout << data << endl;
         top -= 1;
+        return data;
     }
 }
 // function for showing item of stack
@@ -56,7 +59,9 @@ int main(){
     printf("Now the stack is : \n");
     show();
     // deleting elements from stack
-    pop();
+    int info = pop();
+    if(info != -999999) printf("The deleted item is = %d\n", info);
+    else printf("Nothing to delete.\n");
     // again showing elements of stack
     printf("After poping the stack is : \n");
     show();
