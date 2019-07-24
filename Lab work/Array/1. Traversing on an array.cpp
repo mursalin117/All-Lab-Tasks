@@ -6,7 +6,6 @@ int findMax(int a[], int length);
 int findMin(int a[], int length);
 int total(int a[], int length);
 double average(int a[], int length);
-double findSinValue(int a[], int length);
 
 int main(){
     int n;
